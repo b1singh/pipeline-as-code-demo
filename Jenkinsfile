@@ -1,11 +1,7 @@
 
 pipeline {
 
-    agent {
-        node {
-            label 'SLAVE01'
-        }
-    }
+    agent 
 
     tools { 
         maven 'maven3' 
@@ -18,18 +14,13 @@ pipeline {
             )
     }
 
-    environment {
-        APP_NAME = "DCUBE_APP"
-        APP_ENV  = "DEV"
-    }
-
     stages {
         
         stage('Cleanup Workspace') {
             steps {
                 cleanWs()
                 sh """
-                echo "Cleaned Up Workspace for ${APP_NAME}"
+                echo "Cleaned Up Workspace for DCUBE_APP"
                 """
             }
         }
