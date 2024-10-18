@@ -13,6 +13,10 @@ pipeline {
                     numToKeepStr: '10'
             )
     }
+    environment {
+        APP_NAME = "DCUBE_APP"
+        APP_ENV  = "DEV"
+    }
 
     stages {
         
