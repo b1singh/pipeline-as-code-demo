@@ -16,7 +16,7 @@ pipeline {
 
     stages {
         
-        stage('Cleanup Workspace') {
+        stagie('Cleanup Workspace') {
             steps {
                 cleanWs()
                 sh """
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM', 
-                    branches: [[name: '*/master']], 
+                    branches: [[name: '*/main']], 
                     userRemoteConfigs: [[url: 'https://github.com/spring-projects/spring-petclinic.git']]
                 ])
             }
